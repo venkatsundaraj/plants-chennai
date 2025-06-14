@@ -1,15 +1,25 @@
 import {
-  pgTable,
+  pgTableCreator,
   serial,
   text,
-  integer,
-  primaryKey,
+  timestamp,
   boolean,
   varchar,
-  date,
-  timestamp,
-  pgTableCreator,
 } from "drizzle-orm/pg-core";
-import { sql } from "drizzle-orm";
+import { desc, sql } from "drizzle-orm";
 
-export const createTable = pgTableCreator((name) => `chennai-plants_${name}`);
+export const createTable = pgTableCreator((name) => `plants-chennai-${name}`);
+
+export const taskTable = createTable("task", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description"),
+  completed: boolean("completed").notNull().default(false),
+  priority: varchar("priority", { enum: ["low", "medium", "high"] })
+    .notNull()
+    .default("medium"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at")
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
