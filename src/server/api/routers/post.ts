@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { taskFormSchema } from "~/app/lib/validation/validation";
+import { taskFormSchema } from "~/lib/validation/validation";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { taskTable } from "~/server/db/schema";

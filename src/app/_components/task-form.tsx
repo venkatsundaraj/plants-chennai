@@ -5,7 +5,7 @@ import { z } from "zod";
 import {
   taskFormSchema,
   type TaskFormSchemaType,
-} from "~/app/lib/validation/validation";
+} from "~/lib/validation/validation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { api } from "~/trpc/react";

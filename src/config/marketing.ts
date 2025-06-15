@@ -16,3 +16,26 @@ const tasks = [
     createdAt: new Date(),
   },
 ];
+
+export const indianCities = [
+  "Delhi",
+  "Mumbai",
+  "Chennai",
+  "Kolkata",
+  "Bengaluru",
+  "Hyderabad",
+  "Pune",
+  "Ahmedabad",
+  "Jaipur",
+  "Lucknow",
+  "Bhopal",
+  "Chandigarh",
+  "Coimbatore",
+  "Visakhapatnam",
+  "Kochi",
+  "Nagpur",
+  "Indore",
+  "Thiruvananthapuram",
+  "Guwahati",
+  "Varanasi",
+];

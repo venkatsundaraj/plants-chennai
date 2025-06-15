@@ -1,9 +1,10 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, DM_Sans, Inter, DM_Serif_Display } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { cn } from "~/lib/utils";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -11,16 +12,21 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+const paragraph = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--heading",
+});
+
+const heading = Inter({
+  subsets: ["latin"],
+  variable: "--paragraph",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
+    <html lang="en" className={cn(`${paragraph.variable} ${heading.variable}`)}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
