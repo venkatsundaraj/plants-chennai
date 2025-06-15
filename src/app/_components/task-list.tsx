@@ -19,11 +19,13 @@ const TaskList = ({}: TaskListProps) => {
 
   return (
     <ul>
-      {result.data.map((task: Task) => (
-        <Link href={`/task/${task.id}`} key={task.id}>
-          <li>{task.title}</li>
-        </Link>
-      ))}
+      {result.data
+        ? result.data.map((task: Task) => (
+            <Link href={`/task/${task.id}`} key={task.id}>
+              <li>{task.title}</li>
+            </Link>
+          ))
+        : null}
     </ul>
   );
 };
