@@ -17,7 +17,7 @@ const Header: FC<HeaderProps> = () => {
     >
       <div className="flex w-full items-center justify-between">
         <Link href={"/"}>
-          <Icons.Sprout className="stroke-foreground fill-primary h-12 w-12 stroke-1" />
+          <Icons.TreePalm className="stroke-primary fill-primary/40 h-12 w-12 stroke-1" />
         </Link>
         <CommandMenu />
       </div>

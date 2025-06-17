@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <main className="bg-background min-h-screen w-screen">
+    <main className="bg-background">
       <Header />
       {children}
     </main>
