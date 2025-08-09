@@ -6,6 +6,23 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
+  // Enable standalone output for containerization
+  output: "standalone",
+
+  // If you're using images, configure domains
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  },
+
+  // Environment variables that should be available at build time
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

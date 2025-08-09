@@ -1,11 +1,12 @@
 import { type FC } from "react";
 
-interface pageProps {
-  params: { location: string };
+interface PageProps {
+  params: Promise<{ location: string }>;
 }
 
-const page: FC<pageProps> = ({ params }) => {
-  return <div>{params.location}</div>;
+const page = async ({ params }: PageProps) => {
+  const res = await params;
+  return <div>{res.location}</div>;
 };
 
 export default page;
